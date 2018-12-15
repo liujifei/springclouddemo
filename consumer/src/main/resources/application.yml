@@ -1,0 +1,16 @@
+server:
+  port: 7910
+spring:
+  application:
+    name: Ribbon-Consumer
+
+eureka:
+  #客户端
+  client:
+    #注册中心地址
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+#providers:
+  #ribbon:
+    #listOfServers: localhost:8080,localhost:8081
+    #NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule

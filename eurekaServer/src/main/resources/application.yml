@@ -1,0 +1,19 @@
+#端口号
+server:
+  port: 8761
+#Eureka实例名，集群中根据这里相互识别
+eureka:
+  instance:
+    hostname: eureka-server
+  #客户端
+  client:
+    #是否开启注册服务，因为这里如果为true表示自己注册自己，而自己就是一个服务注册方，没必要自己注册自己
+    register-with-eureka: false
+    #是否拉取服务列表，这里我只提供服务给别的服务。
+    fetch-registry: false
+    #注册中心地址
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  server:
+    # 测试时关闭自我保护机制，保证不可用服务及时踢出
+    enable-self-preservation: false

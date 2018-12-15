@@ -1,0 +1,11 @@
+server:
+  port: 7902
+spring:
+  application:
+    name: spring-cloud-provider
+# 心跳检测检测与续约时间
+# 测试时将值设置设置小些，保证服务关闭后注册中心能及时踢出服务
+eureka:
+  instance:
+    lease-renewal-interval-in-seconds: 1
+    lease-expiration-duration-in-seconds: 2
